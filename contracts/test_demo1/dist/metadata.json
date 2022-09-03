@@ -1,0 +1,214 @@
+{
+  "source": {
+    "hash": "0xdbf800a8cbcadbfa17d25fc4c91bc41d3eadefc4d1141fc900bc9cabd0a7bf32",
+    "language": "ink! 3.3.1",
+    "compiler": "rustc 1.65.0-nightly"
+  },
+  "contract": {
+    "name": "test_demo1",
+    "version": "3.3.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "V3": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [],
+          "docs": [
+            "Creates a new counter smart contract initialized to `0`."
+          ],
+          "label": "default",
+          "payable": false,
+          "selector": "0xed4b9d1b"
+        }
+      ],
+      "docs": [],
+      "events": [],
+      "messages": [
+        {
+          "args": [
+            {
+              "label": "new",
+              "type": {
+                "displayName": [
+                  "u32"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [
+            " Increments the counter value which is stored in the contract's storage."
+          ],
+          "label": "set_value",
+          "mutates": true,
+          "payable": false,
+          "returnType": null,
+          "selector": "0xb0f2b72a"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "label": "add_a_number",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "u32"
+            ],
+            "type": 0
+          },
+          "selector": "0x125d8485"
+        },
+        {
+          "args": [],
+          "docs": [
+            " Returns the counter value which is stored in this contract's storage."
+          ],
+          "label": "get",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "u32"
+            ],
+            "type": 0
+          },
+          "selector": "0x3fa4f245"
+        },
+        {
+          "args": [
+            {
+              "label": "code_hash",
+              "type": {
+                "displayName": [
+                  "Hash"
+                ],
+                "type": 1
+              }
+            },
+            {
+              "label": "lib_contr_addr",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 4
+              }
+            }
+          ],
+          "docs": [
+            " Modifies the code which is used to execute calls to this contract address (`AccountId`).",
+            "",
+            " We use this to upgrade the contract logic. We don't do any authorization here, any caller",
+            " can execute this method. In a production contract you would do some authorization here."
+          ],
+          "label": "special_upgrade",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "bool"
+            ],
+            "type": 5
+          },
+          "selector": "0x1831688a"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "ty": 0
+              }
+            },
+            "name": "value"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 2,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "Hash"
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 3
+            }
+          }
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 2,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "AccountId"
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "primitive": "bool"
+          }
+        }
+      }
+    ]
+  }
+}
